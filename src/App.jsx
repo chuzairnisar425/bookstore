@@ -1,4 +1,5 @@
-import Navbar from "./assets/components/Navbar"
+import Banner from "./components/Banner"
+import Navbar from "./components/Navbar"
 
 
 
@@ -9,6 +10,7 @@ function App() {
     <>
     
     <Navbar/>
+    <Banner/>
     </>
   )
 }
