@@ -1,21 +1,17 @@
-import React from 'react'
-import Home from './Home/Home'
+import React from 'react';
+import Home from './Home/Home';
 import Course from './components/Course';
-import { Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
-    <>
-      {/* <Home />
-      <Course /> */}
+    <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />}/>
-          <Route path="/course" element={<Course />}/>
-
-          
+        <Route path="/" element={<Home />} />
+        <Route path="/course" element={<Course />} />
       </Routes>
-    </>
-  )
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
