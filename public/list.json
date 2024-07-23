@@ -81,10 +81,10 @@
     },
     {
         "id": 11,
-        "name": "Story Book",
+        "name": "Recipe Book",
         "title": "lorem lorem lorem lorem lorem lroem",
-        "price": 0,
-        "category": "free",
+        "price": 300,
+        "category": "Recipe",
         "image": "https://img.freepik.com/free-vector/realistic-book-lover-composition-with-stack-colorful-books-with-eyeglasses-home-plants-tea-cup-vector-illustration_1284-77312.jpg?t=st=1721710753~exp=1721714353~hmac=5cde03edcc57865a5393e8c65dee57dbb62750ed6a6b59001e575d5d299d3533&w=740"
     },
     {
