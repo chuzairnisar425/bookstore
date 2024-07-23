@@ -3,8 +3,8 @@ import React from 'react';
 const Cards = ({item}) => {
   return (
     <>
-    <div>
-    <div className="card bg-base-100 w-96 shadow-xl">
+    <div className='my-9 p-3'>
+    <div className="card bg-base-100 w-92 shadow-xl cursor-pointer">
   <figure>
     <img
       src={item.image} 
@@ -17,8 +17,8 @@ const Cards = ({item}) => {
     </h2>
     <p>{item.title}</p>
     <div className="card-actions justify-between">
-      <div className="badge badge-outline">${item.price}</div>
-      <div className="badge badge-outline">But Now</div>
+      <div className="rounded-md border-[2px]  hover:bg-blue-500 hover:text-white px-3 py-2 duration-200">${item.price}</div>
+      <div className="rounded-md border-[2px] hover:bg-blue-500 hover:text-white px-3 py-2 duration-200 ">But Now</div>
     </div>
   </div>
 </div>
