@@ -27,8 +27,8 @@ const Banner = () => {
 
 
 </div>
-<div className='md:order-2 w-full md:w-1/2'>
- <img src={banner} alt="" className='w-92 h-92' />
+<div className='md:order-2 w-full md:w-1/2 dark:bg-slate-900'>
+ <img src={banner} alt="" className='w-92 h-92 ' />
 </div>
         </div> 
     </>
