@@ -4,7 +4,8 @@ const Cards = ({item}) => {
   return (
     <>
     <div className='my-9 p-3'>
-    <div className="card bg-base-100 w-92 shadow-xl cursor-pointer">
+    <div className="card bg-base-100 w-92 shadow-xl cursor-pointer hover:scale-105 duration-300 dark:bg-slate-900 dark:text-white dark:border
+">
   <figure>
     <img
       src={item.image} 
