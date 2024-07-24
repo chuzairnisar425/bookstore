@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Login from './Login';
-import { useForm } from "react-hook-form";
+  import { useForm } from "react-hook-form";
 
 const Signup = () => {
   const {
@@ -85,7 +85,7 @@ const Signup = () => {
           </div>
         </div>
       </div>
-      <dialog id="login-modal">
+        <dialog id="login-modal">
         <Login />
       </dialog>
     </>
