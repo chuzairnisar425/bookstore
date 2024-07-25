@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Login from './Login';
-  import { useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 
 const Signup = () => {
   const {
@@ -10,7 +10,16 @@ const Signup = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    const userInfo={
+
+      fullname: data.fullname,
+      email: data.email,
+      password: data.password,
+      
+    }
+    axios.p 
+  };
 
   return (
     <>
@@ -20,26 +29,26 @@ const Signup = () => {
             <form onSubmit={handleSubmit(onSubmit)}>
               {/* Close button */}
               <Link to='/' className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</Link>
-              
+
               <h3 className="font-bold text-lg">Signup</h3>
 
               {/* Name */}
               <div className='mt-4 space-y-2'>
-              <span>Name</span>
-              <br />
+                <span>Name</span>
+                <br />
                 <input
                   type="text"
                   placeholder='Enter your name'
                   className='w-80 px-3 border rounded-md outline-none py-1'
-                  {...register("name", { required: true })}
+                  {...register("fullname", { required: true })}
                 />
-                {errors.name && <span className='text-sm text-red-500'>This field is required</span>}
+                {errors.fullname && <span className='text-sm text-red-500'>This field is required</span>}
               </div>
 
               {/* Email */}
               <div className='mt-4 space-y-2'>
-              <span>Email</span>
-              <br />
+                <span>Email</span>
+                <br />
                 <input
                   type="email"
                   placeholder='Enter your email'
@@ -51,8 +60,8 @@ const Signup = () => {
 
               {/* Password */}
               <div className='mt-4 space-y-2'>
-              <span>Password</span>
-              <br />
+                <span>Password</span>
+                <br />
                 <input
                   type="password"
                   placeholder='Enter your password'
@@ -71,7 +80,7 @@ const Signup = () => {
                   Signup
                 </button>
                 <p className='text-xl'>
-                  Have an Account? 
+                  Have an Account?
                   <button
                     type="button"
                     className='underline text-blue-500 cursor-pointer'
@@ -85,7 +94,7 @@ const Signup = () => {
           </div>
         </div>
       </div>
-        <dialog id="login-modal">
+      <dialog id="login-modal">
         <Login />
       </dialog>
     </>
