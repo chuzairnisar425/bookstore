@@ -70,14 +70,14 @@ function Navbar() {
                         </div>
                         <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-2 w-52 p-2 shadow-lg dark:bg-slate-800 dark:text-white "
                         >
                             {navItems}
                         </ul>
                     </div>
                     <a className="text-2xl cursor-pointer font-bold">BookStore</a>
                 </div>
-                <div className="navbar-end space-x-3">
+                <div className="navbar-end space-x-3 ">
                     <div className="navbar-center hidden lg:flex">
                         <ul className="menu menu-horizontal px-1">
                             {navItems}

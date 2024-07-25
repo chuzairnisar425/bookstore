@@ -1,21 +1,37 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import list from '../../public/list.json'
 // react  slick slider css import 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
+import axios from 'axios';
 import Slider from "react-slick";
 import Cards from './Cards';
 
 
 
 const Freebook = () => {
+  const [book, setBook] = useState([]);
+  useEffect(() => {
+    const getBook = async () => {
+      try {
+        const res = await axios.get("http://localhost:4003/book");
+        const data = res.data.filter((data) => data.category === 'free')
+        console.log('Data fetched:', data);
+        setBook(data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+        // If error.response exists, log the status and data for more detail
+        if (error.response) {
+          console.error('Error status:', error.response.status);
+          console.error('Error data:', error.response.data);
+        }
+      }
+    };
+    getBook();
+  }, []);
 
-  const filterData = list.filter((data) => data.category === 'free');
 
-
-
-   var settings = {
+  var settings = {
     dots: true,
     infinite: false,
     speed: 500,
@@ -48,21 +64,21 @@ const Freebook = () => {
         }
       }
     ]
-  };return (
+  }; return (
     <>
-    <div className='max-w-screen-2xl container mx-auto md:px-20 px-4 '>
-      <div>
-      <h1 className='font-semibold text-xl pb-2'>Free Offered Courses</h1>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam laborum debitis unde magni delectus iure facilis harum corrupti laudantium odio. Blanditiis magnam distinctio temporibus et.</p>
-      </div>
-   
-<div>
-<Slider {...settings}>
-       {filterData.map((item)=>(
-        <Cards item={item} key={item.id}/>
-       ))}
-      </Slider>
-</div> </div>
+      <div className='max-w-screen-2xl container mx-auto md:px-20 px-4 '>
+        <div>
+          <h1 className='font-semibold text-xl pb-2'>Free Offered Courses</h1>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam laborum debitis unde magni delectus iure facilis harum corrupti laudantium odio. Blanditiis magnam distinctio temporibus et.</p>
+        </div>
+
+        <div>
+          <Slider {...settings}>
+            {book.map((item) => (
+              <Cards item={item} key={item.id} />
+            ))}
+          </Slider>
+        </div> </div>
     </>
   );
 }
