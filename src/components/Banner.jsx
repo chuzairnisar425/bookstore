@@ -23,7 +23,7 @@ const Banner = () => {
   <input type="text" className="grow" placeholder="Email" />
 </label>
 </div>
-<button className="btn mt-6 btn-info">Email me</button>
+<button className="btn mt-6 btn-info">Get Started</button>
 
 
 </div>
