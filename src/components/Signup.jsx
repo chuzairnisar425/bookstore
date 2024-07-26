@@ -1,7 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { json, Link } from 'react-router-dom';
 import Login from './Login';
 import { useForm } from "react-hook-form";
+import axios from 'axios'
+import toast from 'react-hot-toast';
 
 const Signup = () => {
   const {
@@ -10,15 +12,31 @@ const Signup = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
-    const userInfo={
+  const onSubmit = async (data) => {
+    const userInfo = {
 
       fullname: data.fullname,
       email: data.email,
       password: data.password,
-      
+
     }
-    axios.p 
+    await axios.post('http://localhost:4003/user/signup', userInfo)
+      .then((res) => {
+        console.log(res.data);
+        if (res.data) {
+          
+          toast.success('Signup Successfully');
+
+        }
+localStorage.setItem('Users', JSON.stringify(res.data.user))
+      })
+      .catch((err) => {
+      if(err.response){
+        console.log(err)
+        toast.error('Error: '+ err.response.data.message);
+
+      }
+      })
   };
 
   return (
